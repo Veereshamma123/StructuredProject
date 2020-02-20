@@ -1,0 +1,27 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1582090435191' stop='1582090491088'>
+    <name>Intake Login</name>
+    <title>Intake Login</title>
+    <test-cases>
+        <test-case start='1582090435191' status='failed' stop='1582090491087'>
+            <name>Click on Login</name>
+            <title>Click on Login</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='2b7988d8-c242-4d8d-a6d3-f7646c68ee67-attachment.png' type='image/png' size='781898'/>
+                <attachment title='Screenshot' source='42d46383-f100-4656-80bd-2223cfe24821-attachment.png' type='image/png' size='871667'/>
+            </attachments>
+            <failure>
+                <message>Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.</message>
+                <stack-trace>Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.
+                    at Timeout._onTimeout (C:\Users\veereshamma.kake\eclipse-workspace\StructedProject\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4281:23)
+                    at ontimeout (timers.js:436:11)
+                    at tryOnTimeout (timers.js:300:5)
+                    at listOnTimeout (timers.js:263:5)
+                    at Timer.processTimers (timers.js:223:10)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
