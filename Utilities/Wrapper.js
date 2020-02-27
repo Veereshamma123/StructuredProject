@@ -5,7 +5,7 @@ var MainWrapperP = function () {
 
 MainWrapperP.prototype = Object.create({}, {
     locateElement: {
-        value: function (locator, locatorvalue) {
+        value: function (locator, locatorvalue, locatorvalue2) {
 
 
             switch (locator) {
@@ -26,8 +26,8 @@ MainWrapperP.prototype = Object.create({}, {
                     return element(by.name(locatorvalue));
 
                 case "css":
-                    browser.wait(EC.visibilityOf(element(by.css(locatorvalue))), 2000);
-                    element(by.css(locatorvalue)).getText().then(console.log);
+                    //browser.wait(EC.visibilityOf(element(by.css(locatorvalue))), 2000);
+                   // element(by.css(locatorvalue)).getText().then(console.log);
                     return element(by.css(locatorvalue));
 
                 case "className":
@@ -54,10 +54,41 @@ MainWrapperP.prototype = Object.create({}, {
                     browser.wait(EC.visibilityOf(element(by.repeater(locatorvalue))), 2000);
                     element(by.repeater(locatorvalue)).getText().then(console.log);
                     return element(by.repeater(locatorvalue));
+
+                case "cssContainingText":
+                    browser.wait(EC.visibilityOf(element(by.cssContainingText(locatorvalue, locatorvalue2))), 2000);
+                    element(by.cssContainingText(locatorvalue, locatorvalue2)).getText().then(console.log);
+                    return element(by.cssContainingText(locatorvalue, locatorvalue2));
+                case "child":
+                    var child_result = element(by.className(locatorvalue1)).element(by.css(locatorvalue2));
+                    browser.wait(EC.visibilityOf(child_result), 8000);
+                    child_result.getText().then(console.log);
+                    child_result.click();
+             
             }
         }
+      
     },
-
+      child: {
+        value: function (locatorvalue1, locatorvalue2) {
+            browser.sleep(2222);
+            var child_result = element(by.className(locatorvalue1)).element(by.css(locatorvalue2));
+                    browser.wait(EC.visibilityOf(child_result), 8000);
+                   child_result.getText().then(console.log);
+                    child_result.click();
+            }
+        
+    },
+child2: {
+        value: function (locatorvalue1, locatorvalue2) {
+            browser.sleep(2222);
+            var child_result = element(by.css(locatorvalue1)).element(by.css(locatorvalue2));
+                    browser.wait(EC.visibilityOf(child_result), 8000);
+                   child_result.getText().then(console.log);
+                    child_result.click();
+            }
+        
+    },
     getScreenshot: {
         get: function () {
             browser.takeScreenshot().then(function (png) {
@@ -73,6 +104,14 @@ MainWrapperP.prototype = Object.create({}, {
             browser.wait(EC.visibilityOf(ele), 2000);
             browser.wait(EC.elementToBeClickable(ele), 2000);
             ele.click();
+            this.getScreenshot;
+        }
+    },
+     clear: {
+        value: function (ele) {
+            browser.wait(EC.visibilityOf(ele), 2000);
+            browser.wait(EC.elementToBeClickable(ele), 2000);
+            ele.clear();
             this.getScreenshot;
         }
     },

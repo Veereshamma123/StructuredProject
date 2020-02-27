@@ -14,20 +14,18 @@ describe("Intake Login", function () {
            sapphireLogin.widget();
         }),
         it('Entering Username and clicking on next button', function(){
-            sapphireLogin.username();
+          sapphireLogin.username();
         }),
         it('Entering password and clicking on signIn button', function(){
-            sapphireLogin.password();
+          sapphireLogin.password();
         }),
         it('Clicking on YES in Stay signed page ', function(){
-            sapphireLogin.stayIn();
+           sapphireLogin.stayIn();
         }),
         it('Verifying the title', function(){
-            sapphireLogin.currentTitle();
-        })
+          sapphireLogin.currentTitle();
+         })
         
-       
-
     })
 
 

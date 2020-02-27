@@ -7,7 +7,9 @@
     "protractor-jasmine2-html-reporter": "0.0.7",
     "setupFilesAfterEnv": [
       "jest-allure/dist/setup"
-    ]
+    ],
+    "uuid": "^7.0.0",
+    "uuidv4": "^6.0.2"
   },
   "scripts": {
     "webdriver-update": "./node_modules/.bin/webdriver-manager update",
